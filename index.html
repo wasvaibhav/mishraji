@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
-        
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +15,7 @@
             font-family: 'Poppins', sans-serif;
         }
         
-         :root {
+        :root {
             --primary: #1a5276;
             --primary-light: #2c7fb8;
             --secondary: #e67e22;
@@ -26,6 +24,7 @@
             --dark: #333;
             --gray: #777;
             --success: #27ae60;
+            --whatsapp: #25D366;
         }
         
         body {
@@ -65,7 +64,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: 0.5s;
         }
         
@@ -124,8 +123,8 @@
             margin: 25px auto 0;
             font-size: 1.1rem;
         }
-        /* Header Styles */
         
+        /* Header Styles */
         header {
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -211,8 +210,8 @@
             cursor: pointer;
             color: var(--primary);
         }
-        /* Hero Section */
         
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -258,8 +257,8 @@
         .hero .btn {
             animation: fadeInUp 1s ease 0.6s both;
         }
-        /* Booking Form */
         
+        /* Booking Form */
         .booking-form {
             background: white;
             padding: 40px;
@@ -317,8 +316,8 @@
             text-align: center;
             margin-top: 10px;
         }
-        /* Services Section */
         
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -389,8 +388,8 @@
             color: var(--gray);
             transition: all 0.4s ease;
         }
-        /* Reviews Section */
         
+        /* Reviews Section */
         .reviews-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -648,8 +647,8 @@
         .star-rating i:hover {
             transform: scale(1.2);
         }
-        /* Contact Section */
         
+        /* Contact Section */
         .contact-container {
             display: flex;
             gap: 50px;
@@ -690,8 +689,154 @@
             margin-bottom: 5px;
             color: var(--primary);
         }
-        /* Footer */
         
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 250px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(26, 82, 118, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(26, 82, 118, 0.05);
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+        
+        .whatsapp-float i {
+            font-size: 34px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--dark), #222);
             color: white;
@@ -785,14 +930,14 @@
             font-size: 0.9rem;
             color: #aaa;
         }
-        /* Page Content */
         
+        /* Page Content */
         .page-content {
             padding: 140px 0 100px;
             display: none;
         }
-        /* Animations */
         
+        /* Animations */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -814,16 +959,18 @@
                 transform: translateY(0);
             }
         }
-        /* Responsive Styles */
         
+        /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content,
             .contact-container {
                 flex-direction: column;
             }
+            
             .about-image {
                 order: -1;
             }
+            
             .reviews-summary {
                 flex-direction: column;
                 text-align: center;
@@ -842,29 +989,52 @@
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
                 z-index: 999;
             }
+            
             nav.active {
                 left: 0;
             }
+            
             nav ul {
                 flex-direction: column;
                 padding: 30px;
             }
+            
             nav ul li {
                 margin: 0 0 20px;
             }
+            
             .mobile-menu {
                 display: block;
             }
+            
             .hero h2,
             .reviews-hero h2 {
                 font-size: 2.5rem;
             }
+            
             .hero p,
             .reviews-hero p {
                 font-size: 1.1rem;
             }
+            
             .section-title h2 {
                 font-size: 2.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 28px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 30px;
             }
         }
         
@@ -872,24 +1042,48 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
             .hero,
             .reviews-hero {
                 padding: 150px 0 80px;
             }
+            
             .booking-form {
                 padding: 25px;
             }
+            
             .review-card {
                 padding: 25px;
             }
+            
             .review-form-container {
                 padding: 25px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 26px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 28px;
             }
         }
     </style>
 </head>
-
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917452820984?text=Hi%20Mishraji%20Tours%20and%20Travels,%20I%20would%20like%20to%20book%20a%20ride" class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -902,6 +1096,8 @@
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1026,8 +1222,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Your Trusted Travel Partner</h3>
-                    <p>Mishraji Tours and Travels, owned by Sudhanshu Mishra, has been serving customers in Bareilly and beyond with reliable transportation services. We understand that every journey is important, whether it's a daily commute, a special
-                        occasion, or a business trip.</p>
+                    <p>Mishraji Tours and Travels, owned by Sudhanshu Mishra, has been serving customers in Bareilly and beyond with reliable transportation services. We understand that every journey is important, whether it's a daily commute, a special occasion, or a business trip.</p>
                     <p>Our commitment to customer satisfaction has earned us a loyal customer base and a reputation for excellence in the Bareilly region. We go the extra mile to ensure your travel experience is safe, comfortable, and punctual.</p>
                     <h4>Why Choose Us?</h4>
                     <ul>
@@ -1107,6 +1302,126 @@
         </div>
     </section>
 
+    <!-- Gallery Page -->
+    <section id="gallery" class="page-content" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Gallery</h2>
+                <p>Take a look at our premium fleet and memorable journeys</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Car">
+                    <div class="gallery-overlay">
+                        <h4>Luxury Sedan</h4>
+                        <p>Premium comfort for business travels</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Family SUV">
+                    <div class="gallery-overlay">
+                        <h4>Family SUV</h4>
+                        <p>Spacious and comfortable for family trips</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wedding Car">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Car</h4>
+                        <p>Elegant vehicles for special occasions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Premium Fleet">
+                    <div class="gallery-overlay">
+                        <h4>Premium Fleet</h4>
+                        <p>Well-maintained and clean vehicles</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556742111-a301076d9dab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Airport Transfer">
+                    <div class="gallery-overlay">
+                        <h4>Airport Service</h4>
+                        <p>Timely pickups and drop-offs</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Comfortable Interior">
+                    <div class="gallery-overlay">
+                        <h4>Comfortable Interior</h4>
+                        <p>Spacious and clean cabins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Page -->
+    <section id="faq" class="page-content" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I book a taxi with Mishraji Tours?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can book a taxi through our website using the booking form, by calling us at +91 74528 20984, or by visiting our office in Gayatri Nagar, Bareilly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What types of vehicles do you offer?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a wide range of vehicles including hatchbacks, sedans, SUVs, luxury cars, and Innovas to suit different travel needs and group sizes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you provide outstation services?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide outstation services to all major cities and tourist destinations. We offer both one-way and round-trip options with experienced drivers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is your cancellation policy?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can cancel your booking up to 2 hours before the scheduled pickup time without any charges. For cancellations made later, a nominal fee may apply.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you provide services for special occasions?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide decorated vehicles for weddings, parties, and other special events. We also offer professional chauffeurs for such occasions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept cash, UPI payments, and major credit/debit cards. Corporate clients can also avail monthly billing options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reviews Page -->
     <section id="reviews" class="page-content" style="display: none;">
         <div class="reviews-hero">
@@ -1130,7 +1445,7 @@
                         </div>
                         <div class="total-reviews">Based on 247 reviews</div>
                     </div>
-
+                    
                     <div class="rating-bars">
                         <div class="rating-bar">
                             <div class="rating-label">5 Stars</div>
@@ -1169,12 +1484,11 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="reviews-grid" id="reviewsGrid">
                     <div class="review-card">
                         <div class="review-content">
-                            <p>We planned out our trip at the last moment to spend the year and in a hill station, keeping the situation in mind as well as our needs. They provided us with one of the best resorts alongside great service. Staff Nisha Rawat's
-                                great guidance made the process smoother and efficient. I would surely recommend Mishraji Travels.</p>
+                            <p>We planned out our trip at the last moment to spend the year and in a hill station, keeping the situation in mind as well as our needs. They provided us with one of the best resorts alongside great service. Staff Nisha Rawat's great guidance made the process smoother and efficient. I would surely recommend Mishraji Travels.</p>
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-avatar">AB</div>
@@ -1191,7 +1505,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="review-card">
                         <div class="review-content">
                             <p>Services rendered by Mishraji Travels are par excellence. Very good focus on customer service. Keep it up in future also.</p>
@@ -1211,7 +1525,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="review-card">
                         <div class="review-content">
                             <p>Excellent service! The driver was punctual, polite, and the car was very clean. I've used Mishraji Tours multiple times for airport transfers and they've never disappointed. Highly recommended!</p>
@@ -1231,7 +1545,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="review-card">
                         <div class="review-content">
                             <p>Booked a round trip to Nainital with my family. The driver was very knowledgeable about the route and made our journey comfortable. The car was spacious and well-maintained. Will definitely use their services again.</p>
@@ -1251,7 +1565,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="review-card">
                         <div class="review-content">
                             <p>Used their service for my wedding. They provided decorated cars with professional drivers. Everything was perfectly arranged and on time. Made my special day stress-free. Thank you Mishraji Tours!</p>
@@ -1271,7 +1585,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="review-card">
                         <div class="review-content">
                             <p>I regularly use Mishraji Tours for my business trips to Delhi. Their drivers are professional, and the vehicles are always clean and comfortable. Their pricing is transparent with no hidden charges.</p>
@@ -1292,7 +1606,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="review-form-container">
                     <h3>Share Your Experience</h3>
                     <form id="reviewForm">
@@ -1343,7 +1657,7 @@
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
                     <p>We're here to assist you with all your transportation needs. Reach out to us through any of the following channels:</p>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-user"></i>
@@ -1353,7 +1667,7 @@
                             <p>Sudhanshu Mishra</p>
                         </div>
                     </div>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1363,7 +1677,7 @@
                             <p>Gayatri Nagar Airforce Gate, Izzat Nagar<br>Bareilly, Uttar Pradesh 243001</p>
                         </div>
                     </div>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
@@ -1373,7 +1687,7 @@
                             <p>+91 74528 20984</p>
                         </div>
                     </div>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -1383,7 +1697,7 @@
                             <p>mishraji3713@gmail.com</p>
                         </div>
                     </div>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
@@ -1395,7 +1709,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
                     <form id="contactForm">
@@ -1446,6 +1760,8 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#reviews">Reviews</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -1485,7 +1801,8 @@
             const nav = document.querySelector('nav');
             const pages = document.querySelectorAll('.page-content');
             const header = document.querySelector('header');
-
+            const faqItems = document.querySelectorAll('.faq-item');
+            
             // Header scroll effect
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
@@ -1494,67 +1811,83 @@
                     header.classList.remove('scrolled');
                 }
             });
-
+            
             // Mobile menu toggle
             mobileMenu.addEventListener('click', function() {
                 nav.classList.toggle('active');
                 this.textContent = nav.classList.contains('active') ? '✕' : '☰';
             });
-
+            
             // Navigation click handler
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-
+                    
                     // Update active link
                     navLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
-
+                    
                     // Hide all pages
                     pages.forEach(page => {
                         page.style.display = 'none';
                     });
-
+                    
                     // Show selected page
                     const targetId = this.getAttribute('href').substring(1);
                     document.getElementById(targetId).style.display = 'block';
-
+                    
                     // Animate review cards when reviews page is shown
                     if (targetId === 'reviews') {
                         setTimeout(animateReviewCards, 300);
                     }
-
+                    
                     // Close mobile menu if open
                     nav.classList.remove('active');
                     mobileMenu.textContent = '☰';
-
+                    
                     // Scroll to top
                     window.scrollTo(0, 0);
                 });
             });
-
+            
+            // FAQ functionality
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    item.classList.toggle('active');
+                });
+            });
+            
             // Form submission handlers
             document.getElementById('bookingForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 showNotification('Thank you for your booking! We will contact you shortly to confirm your ride.', 'success');
                 this.reset();
             });
-
+            
             document.getElementById('contactForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 showNotification('Thank you for your message! We will get back to you soon.', 'success');
                 this.reset();
             });
-
+            
             // Star rating functionality
             const stars = document.querySelectorAll('.star-rating i');
             const ratingInput = document.getElementById('rating-value');
-
+            
             stars.forEach(star => {
                 star.addEventListener('click', function() {
                     const rating = this.getAttribute('data-rating');
                     ratingInput.value = rating;
-
+                    
                     stars.forEach(s => {
                         if (s.getAttribute('data-rating') <= rating) {
                             s.classList.remove('far');
@@ -1565,10 +1898,10 @@
                         }
                     });
                 });
-
+                
                 star.addEventListener('mouseover', function() {
                     const rating = this.getAttribute('data-rating');
-
+                    
                     stars.forEach(s => {
                         if (s.getAttribute('data-rating') <= rating) {
                             s.classList.remove('far');
@@ -1579,10 +1912,10 @@
                         }
                     });
                 });
-
+                
                 star.addEventListener('mouseout', function() {
                     const currentRating = ratingInput.value;
-
+                    
                     if (currentRating) {
                         stars.forEach(s => {
                             if (s.getAttribute('data-rating') <= currentRating) {
@@ -1601,19 +1934,19 @@
                     }
                 });
             });
-
+            
             // Review form submission
             document.getElementById('reviewForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-
+                
                 if (!ratingInput.value) {
                     showNotification('Please select a rating', 'error');
                     return;
                 }
-
+                
                 showNotification('Thank you for your review! It will be published after moderation.', 'success');
                 this.reset();
-
+                
                 // Reset stars
                 stars.forEach(star => {
                     star.classList.remove('fas', 'active');
@@ -1621,7 +1954,7 @@
                 });
                 ratingInput.value = '';
             });
-
+            
             // Animate review cards
             function animateReviewCards() {
                 const reviewCards = document.querySelectorAll('.review-card');
@@ -1631,7 +1964,7 @@
                     }, index * 200);
                 });
             }
-
+            
             // Show notification
             function showNotification(message, type) {
                 const notification = document.createElement('div');
@@ -1650,13 +1983,13 @@
                     transform: translateX(300px);
                     transition: transform 0.3s ease;
                 `;
-
+                
                 document.body.appendChild(notification);
-
+                
                 setTimeout(() => {
                     notification.style.transform = 'translateX(0)';
                 }, 100);
-
+                
                 setTimeout(() => {
                     notification.style.transform = 'translateX(300px)';
                     setTimeout(() => {
@@ -1664,11 +1997,10 @@
                     }, 300);
                 }, 4000);
             }
-
+            
             // Initialize animations
             animateReviewCards();
         });
     </script>
 </body>
-
 </html>
