@@ -929,6 +929,67 @@
                 padding: 25px;
             }
         }
+
+
+        .destinations-section {
+    width: 100%;
+    max-width: 1400px; /* Limit max width for very large screens */
+    margin: 0 auto; /* Center the section on the page */
+    padding: 50px 25px; /* 50px top/bottom padding, 25px left/right */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* The main title "Popular Destinations" */
+.destinations-section h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.5rem; /* Large font size (40px) */
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 40px; /* Space below the title */
+}
+
+/* The grid container (the <ul>) */
+.destinations-grid {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: grid;
+    
+    /* --- This is the responsive part --- */
+    
+    /* Mobile (default): 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px; /* 15px space between rows, 20px between columns */
+}
+
+/* Tablet: 4 columns */
+@media (min-width: 768px) {
+    .destinations-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop: 6 columns (like your image) */
+@media (min-width: 1200px) {
+    .destinations-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+.destinations-grid li a {
+    color: #dcdcdc; 
+    text-decoration: none; 
+    font-size: 1rem; 
+    transition: color 0.2s ease; 
+}
+
+
+.destinations-grid li a:hover {
+    color: #ffffff; /* Becomes bright white on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
     </style>
 </head>
 
@@ -1525,6 +1586,100 @@
         </iframe>
 </div>
             </div>
+
+
+            Here is a clone of that website section using modern HTML and CSS (CSS Grid).
+
+This code is responsive, meaning it will look good on desktop (6 columns, like your image) and automatically adjust to fewer columns on tablets and mobile phones.
+
+HTML (index.html)
+This file sets up the structure: a section container, a main h2 title, and a ul (unordered list) for all the destination links.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Destinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="destinations-section">
+        <h2>Popular Destinations</h2>
+        
+        <ul class="destinations-grid">
+            <li><a href="#">Agra Taxi service</a></li>
+            <li><a href="#">Agra to Ayodhya Cab</a></li>
+            <li><a href="#">Agra to Banbasa Cab</a></li>
+            <li><a href="#">Agra to Bareilly Cab</a></li>
+            <li><a href="#">Agra to Dehradun Cab</a></li>
+            <li><a href="#">Agra to Delhi Airport Cab</a></li>
+            <li><a href="#">Agra to Ghaziabad Cab</a></li>
+            <li><a href="#">Agra to Gorakhpur Cab</a></li>
+            <li><a href="#">Agra to Gwalior Cab</a></li>
+            <li><a href="#">Agra to Haldwani Cab</a></li>
+            <li><a href="#">Agra to Haridwar Cab</a></li>
+
+            <li><a href="#">Ghaziabad to Haridwar Cab</a></li>
+            <li><a href="#">Ghaziabad to Jaipur Cab</a></li>
+            <li><a href="#">Ghaziabad to Kainchi dham</a></li>
+            <li><a href="#">Ghaziabad to Kashipur Cab</a></li>
+            <li><a href="#">Ghaziabad to Khatima Cab</a></li>
+            <li><a href="#">Ghaziabad to Lakhimpur Cab</a></li>
+            <li><a href="#">Ghaziabad to Lucknow Cab</a></li>
+            <li><a href="#">Ghaziabad to Manona dham Cab</a></li>
+            <li><a href="#">Ghaziabad to Mathura Cab</a></li>
+            <li><a href="#">Ghaziabad to Meerut Cab</a></li>
+            <li><a href="#">Ghaziabad to Moradabad Cab</a></li>
+
+            <li><a href="#">Jhansi Taxi Service</a></li>
+            <li><a href="#">Kanpur Taxi Service</a></li>
+            <li><a href="#">Kanpur to Ayodhya Cab</a></li>
+            <li><a href="#">Kanpur To Bareilly Cab</a></li>
+            <li><a href="#">Kanpur to Chandigarh Cab</a></li>
+            <li><a href="#">Kanpur to Dehradun Cab</a></li>
+            <li><a href="#">Kanpur to Delhi Cab</a></li>
+            <li><a href="#">Kanpur to Faridabad Cab</a></li>
+            <li><a href="#">Kanpur to Ghaziabad Cab</a></li>
+            <li><a href="#">Kanpur to Gurgaon Cab</a></li>
+            <li><a href="#">Kanpur to Haridwar Cab</a></li>
+
+            <li><a href="#">Muzaffarnagar Taxi Service</a></li>
+            <li><a href="#">Muzaffarnagar to Manona dham Cab</a></li>
+            <li><a href="#">Nagina Taxi Service</a></li>
+            <li><a href="#">Nainital Taxi Service</a></li>
+            <li><a href="#">Nainital to Agra Cab</a></li>
+            <li><a href="#">Nainital to Ayodhya Cab</a></li>
+            <li><a href="#">Nainital To Bareilly Cab</a></li>
+            <li><a href="#">Nainital to Dehradun Cab</a></li>
+            <li><a href="#">Nainital to Delhi Cab</a></li>
+            <li><a href="#">Nainital to Faridabad Cab</a></li>
+            <li><a href="#">Nainital to Ghaziabad Cab</a></li>
+
+            <li><a href="#">Rampur to Bhimtal Cab</a></li>
+            <li><a href="#">Rampur to Bijnor Cab</a></li>
+            <li><a href="#">Rampur to Delhi Cab</a></li>
+            <li><a href="#">Rampur to Faridabad Cab</a></li>
+            <li><a href="#">Rampur to Ghaziabad Cab</a></li>
+            <li><a href="#">Rampur to Gurgaon Cab</a></li>
+            <li><a href="#">Rampur to Haldwani Cab</a></li>
+            <li><a href="#">Rampur to Kashipur Cab</a></li>
+            <li><a href="#">Rampur to Lucknow Cab</a></li>
+            <li><a href="#">Rampur to Mathura Cab</a></li>
+
+            <li><a href="#">Bareilly to Rampur Cab</a></li>
+            <li><a href="#">Bareilly to Ranikhet cab</a></li>
+            <li><a href="#">Bareilly to Roorkee cab</a></li>
+            <li><a href="#">Bareilly to Rudrapur cab</a></li>
+            <li><a href="#">Bareilly to Shahjahanpur cab</a></li>
+            <li><a href="#">Bareilly to Sitapur cab</a></li>
+            <li><a href="#">Bareilly to Sitarganj cab</a></li>
+            <li><a href="#">Bareilly to Tanakpur cab</a></li>
+        </ul>
+    </section>
                     <div class="copyright">
                 <p>&copy; 2023 Mishraji Tours and Travels. All Rights Reserved.</p>
             </div>
