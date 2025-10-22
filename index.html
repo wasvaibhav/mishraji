@@ -26,6 +26,7 @@
             --dark: #333;
             --gray: #777;
             --success: #27ae60;
+             --whatsapp: #25D366;
         }
       
 .footer-column .map-container {
@@ -38,6 +39,50 @@
     border: 0;   
 }
         
+
+   
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+        
+        .whatsapp-float i {
+            font-size: 34px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
         body {
             background-color: #f9f9f9;
             color: var(--dark);
@@ -228,14 +273,16 @@
 .hero {
     
     background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/13740078/pexels-photo-13740078.jpeg');
-    
+    min-height: 100vh; /* Makes the hero section fill the entire screen height */
+    /* padding: 0; */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
     text-align: center;
-    padding: 200px 0 120px;
-    margin-top: 70px;
+    padding: 400px 0 120px;
+    /* margin-top: 70px; */
+    margin-top: 0;
     position: relative;
     overflow: hidden;
 
@@ -909,6 +956,17 @@
             .section-title h2 {
                 font-size: 2.2rem;
             }
+              .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 28px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 30px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -928,8 +986,38 @@
             .review-form-container {
                 padding: 25px;
             }
+             .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 26px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 28px;
+            }
         }
+@media (max-width: 576px) {
+    /* ... other rules ... */
+    
+    .hero,
+    .reviews-hero {
+        padding: 150px 0 80px;
+    }
+    
+    /* ... other rules ... */
+}
+@media (max-width: 576px) {
+    /* ... other rules ... */
+    
+    /* REMOVED .hero from this rule */
+    .reviews-hero {
+        padding: 150px 0 80px;
+    }
 
+    /* ... other rules ... */
+}
 
         .destinations-section {
     width: 100%;
@@ -994,6 +1082,11 @@
 </head>
 
 <body>
+    <!-- whatsapp -->
+     <a href="https://wa.me/917452820984?text=Hi%20Mishraji%20Tours%20and%20Travels,%20I%20would%20like%20to%20book%20a%20ride" class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1533,73 +1626,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Mishraji Tours & Travels</h3>
-                    <p>Your trusted partner for reliable and affordable transportation services in Bareilly and beyond.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#">Local Rides</a></li>
-                        <li><a href="#">Airport Transfers</a></li>
-                        <li><a href="#">Outstation Trips</a></li>
-                        <li><a href="#">Tour Packages</a></li>
-                        <li><a href="#">Corporate Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-user"></i> Sudhanshu Mishra</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Gayatri Nagar Airforce Gate, Izzat Nagar, Bareilly</li>
-                        <li><i class="fas fa-phone"></i> +91 74528 20984</li>
-                        <li><i class="fas fa-envelope"></i> mishraji3713@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Service Available</li>
-                    </ul>
-
-                </div>
-                <div class="map-container">
- <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28129.1764724944!2d79.4082408226027!3d28.42526490352517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0076a0a386b5f%3A0x6931bb80302061e8!2sIzzatnagar%2C%20Bareilly%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1729520842085!5m2!1sen!2sin" 
-            height="180" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-</div>
-            </div>
-
-
-           
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popular Destinations</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+            
     <section class="destinations-section">
         <h2>Popular Destinations</h2>
         
@@ -1673,6 +1700,55 @@
             <li><a href="#">Bareilly to Tanakpur cab</a></li>
         </ul>
     </section>
+            <div class="footer-content">
+                
+                <div class="footer-column">
+                    <h3>Mishraji Tours & Travels</h3>
+                    <p>Your trusted partner for reliable and affordable transportation services in Bareilly and beyond.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Local Rides</a></li>
+                        <li><a href="#">Airport Transfers</a></li>
+                        <li><a href="#">Outstation Trips</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                        <li><a href="#">Corporate Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-user"></i> Sudhanshu Mishra</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Gayatri Nagar Airforce Gate, Izzat Nagar, Bareilly</li>
+                        <li><i class="fas fa-phone"></i> +91 74528 20984</li>
+                        <li><i class="fas fa-envelope"></i> mishraji3713@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Service Available</li>
+                    </ul>
+
+                </div>
+                <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.516454768143!2d79.42323168105021!3d28.418700031334506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0064b786dab33%3A0xff48b515fe210d91!2sAirforce%20gate%2C%2001%2C%20Nainital%20Rd%2C%20Gayatri%20Nagar%2C%20Izatnagar%2C%20Bareilly%2C%20Uttar%20Pradesh%20243202!5e1!3m2!1sen!2sin!4v1761126385886!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+            </div>
+
                     <div class="copyright">
                 <p>&copy; 2023 Mishraji Tours and Travels. All Rights Reserved.</p>
             </div>
