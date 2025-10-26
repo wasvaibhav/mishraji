@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip</title>
+    <style>
+       body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0; 
+            background-color: #f4f4f4;
+            
+            /* --- Background Image Styles --- */
+            background-image: url('https://plus.unsplash.com/premium_photo-1756137116701-ee9391c4bf62?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            color: #333; 
+            /* --- End Background Image Styles --- */
+        }
+
+        /* --- Updated Form Container --- */
+        .container {
+            max-width: 500px; /* This is great for responsiveness */
+            margin: 50px auto; /* 50px top/bottom, centered left/right */
+            padding: 30px;
+            
+            /* The "Frosted Glass" Effect */
+            background-color: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            
+            border-radius: 15px; 
+            border: 1px solid rgba(255, 255, 255, 0.4); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); 
+        }
+        
+        h1 {
+            color: #111; 
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #222; 
+        }
+        
+        .form-group input,
+        .form-group select { /* Combined rule for input and select */
+            width: 100%; /* Perfect for responsiveness */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            font-size: 16px;
+        }
+
+        /* Style for when the input is focused (clicked) */
+        .form-group input:focus,
+        .form-group select:focus { /* Combined rule */
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #8707ad;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease; 
+        }
+        
+        .submit-btn:hover {
+           background-color: #3f7e04;
+        }
+
+        /* --- Select Dropdown Styling --- */
+        .form-group select {
+            appearance: none; 
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            cursor: pointer;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center; 
+            background-size: 20px; 
+            padding-right: 40px; 
+        }
+
+        .form-group select option[value=""] {
+            color: #999;
+        }
+
+        /* ===========================================
+         NEW: RESPONSIVE MEDIA QUERY
+        ===========================================
+        */
+        @media (max-width: 600px) {
+            .container {
+                /* On small screens, remove auto margin and use fixed margins */
+                margin: 20px 15px; 
+                padding: 20px; /* Reduce padding */
+            }
+
+            h1 {
+                font-size: 1.8rem; /* Make heading a bit smaller */
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 15px; /* Tighten up spacing */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 id="trip-name-heading">Booking Your Trip</h1>
+        
+        <form action="/submit-booking" method="POST">
+            <input type="hidden" id="trip-name-input" name="tripName" value="">
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="customerName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="customerPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Travel Date *</label>
+                <input type="date" id="date" name="travelDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cab-type">Cab Type *</label>
+                <input type="text" id="cab-type" name="cabType" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trip-type">Trip Type *</label>
+                <select id="trip-type" name="tripType" required>
+                    <option value="">- Select -</option>
+                    <option value="one-way">One Way</option>
+                    <option value="round-trip">Round Trip</option>
+                    <option value="hourly">Hourly Rental</option>
+                    <option value="multi-day">Multi-Day Package</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+        // This script runs as soon as the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // 1. Get the URL's query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 2. Get the specific parameter named 'trip'
+            const tripName = urlParams.get('trip');
+
+            // 3. Check if the 'trip' parameter exists
+            if (tripName) {
+                // 4. Find the h1 tag and set its text content
+                document.getElementById('trip-name-heading').textContent = tripName;
+
+                // 5. (Optional) Find the hidden input and set its value
+                document.getElementById('trip-name-input').value = tripName;
+            }
+        });
+    </script>
+
+</body>
+</html>
