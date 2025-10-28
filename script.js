@@ -56,21 +56,7 @@
                 });
             });
 
-            // Form submission handlers
-            document.getElementById('bookingForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                showNotification('Thank you for your booking! We will contact you shortly to confirm your ride.', 'success');
-                this.reset();
-            });
-
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                showNotification('Thank you for your message! We will get back to you soon.', 'success');
-                this.reset();
-            });
-            
-
-            // Form submission handlers
+            // Note: Booking and Contact form submissions are handled in api-integration.js
 
 
 
@@ -133,25 +119,7 @@
                 });
             });
 
-            // Review form submission
-            document.getElementById('reviewForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                if (!ratingInput.value) {
-                    showNotification('Please select a rating', 'error');
-                    return;
-                }
-
-                showNotification('Thank you for your review! It will be published after moderation.', 'success');
-                this.reset();
-
-                // Reset stars
-                stars.forEach(star => {
-                    star.classList.remove('fas', 'active');
-                    star.classList.add('far');
-                });
-                ratingInput.value = '';
-            });
+            // Note: Review form submission is handled in api-integration.js
 
             // Animate review cards
             function animateReviewCards() {
