@@ -195,7 +195,7 @@
 
 
                     try {
-                        const resp = await fetch('https://nerds-blue.vercel.app/', {
+                        const resp = await fetch('https://nerds-blue.vercel.app/inform', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(payload)
