@@ -56,12 +56,6 @@
                 });
             });
 
-            // Note: Booking and Contact form submissions are handled in api-integration.js
-
-
-
-
-
 
             // Star rating functionality
             const stars = document.querySelectorAll('.star-rating i');
@@ -119,7 +113,6 @@
                 });
             });
 
-            // Note: Review form submission is handled in api-integration.js
 
             // Animate review cards
             function animateReviewCards() {

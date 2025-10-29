@@ -483,6 +483,87 @@
             color: var(--gray);
             transition: all 0.4s ease;
         }
+        
+        .fleet-section {
+            background: #fff;
+            padding-top: 70px;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+            justify-content: center; 
+            gap: 28px;
+        }
+
+        .car-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .car-image {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: #f3f6f9;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        
+
+        .car-details {
+            padding: 18px 18px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .car-details h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .car-sub {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .car-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+        }
+
+        .chip {
+            background: #f1f5f9;
+            color: #355571;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            border: 1px solid #e6edf3;
+        }
+
+        .car-cta {
+            align-self: flex-start;
+        }
         /* Reviews Section */
         
         .reviews-hero {
