@@ -163,6 +163,54 @@
                 }, 4000);
             }
 
-            // Initialize animations
+
             animateReviewCards();
+            
+
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const pickup = (document.getElementById('pickup') || {}).value || '';
+                    const destination = (document.getElementById('destination') || {}).value || '';
+                    const tripType = (document.getElementById('trip-type') || {}).value || '';
+                    const taxiType = (document.getElementById('taxi-type') || {}).value || '';
+                    const date = (document.getElementById('pickup-date') || {}).value || '';
+                    const time = (document.getElementById('pickup-time') || {}).value || '';
+                    const name = (document.getElementById('name') || {}).value || '';
+                    const phone = (document.getElementById('mobile') || {}).value || '';
+
+                    const bookingDateTime = date ? (time ? `${date} ${time}` : date) : '';
+
+                    const payload = {
+                        pickup,
+                        destination,
+                        tripType,
+                        taxiType,
+                        bookingDateTime,
+                        name,
+                        phone
+                    };
+
+
+                    try {
+                        const resp = await fetch('https://nerds-blue.vercel.app/', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!resp.ok) {
+                            console.error('External API error', resp.status, resp.statusText);
+                        } else {
+                            console.log('External API accepted booking', resp.status);
+                        }
+                    } catch (err) {
+                        console.error('Network error sending booking to external API', err);
+                    }
+
+                    bookingForm.reset();
+                });
+            }
         });
