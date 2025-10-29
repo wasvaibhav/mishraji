@@ -9,6 +9,12 @@
             const pages = document.querySelectorAll('.page-content');
             const header = document.querySelector('header');
 
+            // Set current year in footer
+            const yearEl = document.getElementById('currentYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
             // Header scroll effect
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
