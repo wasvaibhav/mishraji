@@ -193,6 +193,10 @@
             padding: 100px 0;
         }
         
+#home {
+    padding: 0;
+}
+        
         .section-title {
             text-align: center;
             margin-bottom: 60px;
@@ -314,24 +318,23 @@
         /* Hero Section */
 
 
-        /* --- MODIFIED HERO RULE --- */
+        /* --- MODIFIED HERO RULE (slideshow via CSS background-image animation) --- */
 .hero {
-    
+    /* default to the first image in the cycle */
     background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/13740078/pexels-photo-13740078.jpeg');
     min-height: 100vh; /* Makes the hero section fill the entire screen height */
-    /* padding: 0; */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
     text-align: center;
     padding: 400px 0 120px;
-    /* margin-top: 70px; */
     margin-top: 0;
     position: relative;
     overflow: hidden;
 
-    animation: heroImageCycle 9s infinite;
+    /* animate through a sequence of background images (slideshow) */
+    animation: heroImageCycle 18s infinite;
 }
 
 .hero::before {
@@ -367,30 +370,29 @@
     animation: fadeInUp 1s ease 0.6s both;
 }
 
-
-/* --- NEW KEYFRAMES RULE --- */
+/* --- HERO SLIDESHOW KEYFRAMES (includes the two user-provided images) --- */
 @keyframes heroImageCycle {
- 
-
-    0%, 25%{
-        
+    /* 6 images spaced evenly over the animation duration */
+    0%, 16.66% {
         background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/13740078/pexels-photo-13740078.jpeg');
     }
-    
 
-   25%, 50% {
-     
+    16.67%, 33.33% {
         background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/2920064/pexels-photo-2920064.jpeg?_gl=1*9wc7m6*_ga*OTkyNzg4NDcuMTc1NTA4MTk4Mw..*_ga_8JE65Q40S6*czE3NjExNTA3NzckbzE0JGcwJHQxNzYxMTUwNzc3JGo2MCRsMCRoMA..');
     }
-   
-    50%, 75% {
 
-        background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://img.autocarindia.com/Reviews/Innova-Crysta-rear-track.jpg?w=700&c=0');
-    }
-    
-    75%, 100% {
-     
+    50.01%, 66.66% {
         background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202204/0Q2A4461_C.jpg?VersionId=3riZalCRDMkRTb9xwoLmiLc8qSEvQqB6&size=690:388');
+    }
+
+    66.67%, 83.33% {
+        /* user-added: Maruti Suzuki Dzire (blue) */
+        background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Fgallery%2Forig%2Fmaruti-suzuki%2F2025-new-dzire%2Fexterior%2Fmaruti-suzuki-dzire_blue_9.jpg&w=1600&q=75');
+    }
+
+    83.34%, 100% {
+        /* user-added: Toyota Innova Crysta photo */
+        background-image: linear-gradient(rgba(134, 130, 130, 0.7), rgba(0, 0, 0, 0.7)), url('https://cdn-s3.autocarindia.com/Toyota/innova-crysta/_DSC1216.JPG?w=640&q=75');
     }
 }
         /* Booking Form */
